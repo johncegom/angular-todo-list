@@ -1,0 +1,44 @@
+<section class="container mt-5 mb-3 mx-auto w-50 p-3 todo-list">
+  <h1 class="text-center todo-list__title mb-5">
+    {{ "todo list" | titlecase }}
+  </h1>
+
+  <form
+    [formGroup]="todoForm"
+    (ngSubmit)="addTodo()"
+    class="d-flex position-relative justify-content-center"
+  >
+    <mat-form-field hideRequiredMarker="true" class="w-75">
+      <input
+        matInput
+        formControlName="title"
+        placeholder="Add new task..."
+        class="todo-list__input"
+      />
+      @if (todoForm.get('title')?.hasError('required')) {
+      <mat-error>You must enter a value</mat-error>
+      }
+    </mat-form-field>
+
+    <button
+      mat-fab
+      aria-label="Add new task button with add icon"
+      type="submit"
+      class="ms-2"
+      [disabled]="!todoForm.valid"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </form>
+
+  <ul class="d-flex flex-column gap-4 mt-3 p-0">
+    @for (todo of todoList(); track todo.id) {
+    <app-todo-item
+      [todo]="todo"
+      (deleteTodo)="deleteTodo($event)"
+      (toggleCompleted)="toggleCompleted($event)"
+      (updateTodo)="updateTodo($event)"
+    ></app-todo-item>
+    }
+  </ul>
+</section>

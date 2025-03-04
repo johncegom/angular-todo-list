@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "bootstrap/scss/bootstrap-utilities";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--primary-text-color);
+}
+
+:root {
+  --primary-bg-color: #ca5400;
+  --primary-text-color: #fff;
+  --secondary-bg-color: #eed1ab;
+  --mat-form-field-error-text-color: #ff0000;
+}
+
+.dark-mode {
+  --primary-bg-color: #bd9b84;
+  --primary-text-color: #fff;
+  --secondary-bg-color: #534f4f;
+}

@@ -1,0 +1,12 @@
+.completed {
+  text-decoration: line-through;
+  color: #45c445;
+}
+
+.todo-list__item {
+  background-color: var(--primary-bg-color);
+}
+
+.todo-list__item:hover {
+  cursor: pointer;
+}

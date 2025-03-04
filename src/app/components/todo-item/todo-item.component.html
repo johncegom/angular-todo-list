@@ -1,0 +1,46 @@
+<li
+  class="d-flex justify-content-between align-items-center p-3 todo-list__item rounded"
+>
+  @if (!editing) {
+  <p
+    class="my-auto text-break w-75"
+    [class.completed]="todo.completed"
+    (click)="onToggleCompleted()"
+  >
+    {{ todo.title }}
+  </p>
+  <section class="d-flex gap-2">
+    <button
+      mat-fab
+      aria-label="Edit task button with edit icon"
+      (click)="startEdit()"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button
+      mat-fab
+      aria-label="Delete task button with delete icon"
+      (click)="onDeleteTodo()"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </section>
+  } @else {
+  <mat-form-field class="w-75 mt-3">
+    <input
+      type="text"
+      matInput
+      placeholder="Edit task..."
+      [(ngModel)]="editedTitle"
+    />
+  </mat-form-field>
+  <section class="d-flex gap-2">
+    <button mat-fab (click)="saveEdit()">
+      <mat-icon>check</mat-icon>
+    </button>
+    <button mat-fab (click)="cancelEdit()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </section>
+  }
+</li>
