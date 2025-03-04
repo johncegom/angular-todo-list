@@ -1,4 +1,4 @@
-# TodoListScss
+# Todo List
 
 A modern Todo List application built with Angular 19, featuring Material Design components and SCSS styling. The application provides a clean and intuitive interface for managing daily tasks with real-time updates.
 
