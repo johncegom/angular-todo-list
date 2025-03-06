@@ -1,9 +1,9 @@
 .todo-list {
   background-color: var(--secondary-bg-color);
   border-radius: 5px;
-}
 
-.todo-list__title {
-  color: var(--primary-bg-color);
-  font-size: 2.5rem;
+  &__title {
+    color: var(--primary-bg-color);
+    font-size: 2.5rem;
+  }
 }
